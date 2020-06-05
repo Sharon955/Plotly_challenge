@@ -1,7 +1,7 @@
 //Create Initial Graph
 function init() {
   //Read in Json file and create variables
-  d3.json("../../samples.json").then(function(data){
+  d3.json("https://sharon955.github.io/Plotly_challenge/data/samples.json").then(function(data){
       console.log(data.samples[0].otu_ids[0]);
 
       //get sample_values as values (x axis) for Bar Chart
@@ -68,7 +68,7 @@ var selectDropdown = d3.select("#selDataset");
 
 
 function addOptions() {
-    d3.json("../../samples.json").then(function(data) {
+    d3.json("https://sharon955.github.io/Plotly_challenge/data/samples.json").then(function(data) {
 
         data.names.forEach((name, i) => {
             var appendOption = selectDropdown.append("option").text(name).attr('value', i);
@@ -86,7 +86,7 @@ d3.selectAll("#selDataset").on("change", updatePlotly);
 function updatePlotly() {
   var selectDropdown = d3.select("#selDataset");
   var dataset = selectDropdown.property("value");
-  d3.json("../../samples.json").then(function(data){
+  d3.json("https://sharon955.github.io/Plotly_challenge/data/samples.json").then(function(data){
 
     for (var i = 0; i < 153; i++) {
     //console.log('"' + i.toString() + '"')
